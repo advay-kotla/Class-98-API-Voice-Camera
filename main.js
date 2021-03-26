@@ -26,3 +26,26 @@ var Content = event.results[0][0].transcript;
 
 }
 
+ function speak()  {
+ 
+  var synth = window.SpeechSynthesis
+
+  speak_data = document.getElementById("textbox").value;
+
+   var utterThis = new SpeechSynthesisUtterance(speak_data);
+
+  synth.speak(utterThis);
+
+  Webcam.attach(camera);
+ }
+
+
+ Webcam.set ({
+
+  width:360,
+  height:250,
+   img_format = 'png',
+   png_quality: 90
+
+ });
+ camera = document.getElementById("camera");
